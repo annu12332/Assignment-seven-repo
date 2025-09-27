@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.priority-high{
+    color: rgb(246, 3, 3);
+}
+.priority-medium{
+    color: rgb(232, 206, 11);
+}
+.priority-low{
+    color: green;
+}
