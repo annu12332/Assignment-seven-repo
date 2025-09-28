@@ -27,10 +27,10 @@ function App() {
     <div className='bg-gray-100'>
       <Navbar />
       <div className='container mx-auto'>
-        {/* Banner e count pathano */}
+        
         <Bannner inProgressCount={inProgressCount} resolvedTaskCount={resolvedTaskCount} />
 
-        {/* Tickets e setter pathano */}
+        
         <AllTickets 
           tickets={tickets} 
 		  setTickets={setTickets} 
