@@ -3,9 +3,10 @@ import React from 'react'
 const Navbar = () => {
 	return (
 		<nav className=' w-full flex items-center justify-between px-8 py-3 bg-white shadow'>
-			<div className='text-xl font-bold'>CS-Ticket System</div>
+			<div className='text-xl font-bold text-gray-800'>CS-Ticket System</div>
 
-			<div className='flex items-center space-x-6'>
+			<div className='flex gap-2'>
+				<div className='flex items-center space-x-6'>
 				<a href='#home' className='text-gray-700 hover:text-gray-900'>
 					Home
 				</a>
@@ -28,6 +29,7 @@ const Navbar = () => {
 			<button className='bg-gradient-to-r from-[#422AD5] to-purple-600 text-white px-4 py-2 rounded-md'>
 				+ New Ticket
 			</button>
+			</div>
 		</nav>
 	)
 }
