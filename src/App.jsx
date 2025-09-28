@@ -33,6 +33,7 @@ function App() {
         {/* Tickets e setter pathano */}
         <AllTickets 
           tickets={tickets} 
+		  setTickets={setTickets} 
           setInProgressCount={setInProgressCount} 
 		  setResolvedTaskCount={setResolvedTaskCount}
         />

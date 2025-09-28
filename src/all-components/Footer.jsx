@@ -1,6 +1,10 @@
+import { PiXLogoBold} from "react-icons/pi";
+import { AiFillTwitterCircle } from "react-icons/ai";
+import { IoLogoFacebook } from "react-icons/io5";
+import { ImMail4 } from "react-icons/im";
 const Footer = () => {
 	return (
-		<footer className='bg-black text-gray-300'>
+		<footer className='bg-black text-gray-300 mt-9'>
 			<div className='max-w-7xl mx-auto px-3 py-5 grid grid-cols-1 md:grid-cols-5 gap-10'>
 				{/* About */}
 				<div>
@@ -90,19 +94,20 @@ const Footer = () => {
 						<li>
 							<a href='#' className='hover:text-white flex items-center gap-2'>
 								{' '}
-								CS-Ticket System
+								<PiXLogoBold />CS-Ticket System
 							</a>
 						</li>
 						<li>
 							<a href='#' className='hover:text-white flex items-center gap-2'>
 								{' '}
-								CS-Ticket System
+								<AiFillTwitterCircle />CS-Ticket System
 							</a>
 						</li>
 						<li>
 							<a href='#' className='hover:text-white flex items-center gap-2'>
 								{' '}
-								CS-Ticket System
+								<IoLogoFacebook />
+                                CS-Ticket System
 							</a>
 						</li>
 						<li>
@@ -110,7 +115,7 @@ const Footer = () => {
 								href='mailto:support@cst.com'
 								className='hover:text-white flex items-center gap-2'
 							>
-								support@cst.com
+								<ImMail4 />support@cst.com
 							</a>
 						</li>
 					</ul>

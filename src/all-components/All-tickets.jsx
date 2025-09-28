@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { toast } from "react-toastify";
+import { FaRegCalendar } from "react-icons/fa6";
 
-const AllTickets = ({ tickets, setInProgressCount, setResolvedTaskCount }) => {
+const AllTickets = ({ tickets, setInProgressCount, setResolvedTaskCount, setTickets }) => {
 	console.log(tickets)
 
 	const [taskStatus, setTaskStatus] = useState([]);
@@ -13,9 +14,11 @@ const AllTickets = ({ tickets, setInProgressCount, setResolvedTaskCount }) => {
 		setResolvedTasks([...resolvedTasks, task]);
 		setResolvedTaskCount(prev => prev + 1);
 		setResolvedTasks([...resolvedTasks, task]);
+		  setTickets(prev => prev.filter(t => t.id !== task.id));
 
 		
 		setTaskStatus(taskStatus.filter(t => t.id !== task.id));
+		toast(`Task Completed`);
 
 	};
 
@@ -23,14 +26,16 @@ const AllTickets = ({ tickets, setInProgressCount, setResolvedTaskCount }) => {
 		setTaskStatus([...taskStatus, ticket]);
 		setInProgressCount(prev => prev + 1);
 		toast(`Added "${ticket.title}" to Status`);
+		  
+
 
 	}
 
 	return (
 		<div>
 			<h2 className='text-sm font-bold text-gray-800 mt-9'>Customer Tickets</h2>
-			<div className='flex gap-3 mt-3 '>
-				<div className=' gap-2 grid grid-cols-3'>
+			<div className=' md:flex gap-3 mt-3 '>
+				<div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-2'>
 					{tickets.map((ticket) => (
 						<div key={ticket.id}
 							onClick={() => handleAdd(ticket)} className=' bg-white rounded-md shadow-md'>
@@ -70,7 +75,8 @@ const AllTickets = ({ tickets, setInProgressCount, setResolvedTaskCount }) => {
 									</div>
 									<div className='flex gap-0.5'>
 										<p className='text-xs text-gray-500'>{ticket.customer}</p>
-										<p className='text-xs text-gray-500'>{ticket.createdAt}</p>
+										<FaRegCalendar className='text-gray-500' />
+										<p className='text-xs text-gray-500'> {ticket.createdAt}</p>
 									</div>
 								</div>
 								<div className='card-actions justify-end'></div>
@@ -80,7 +86,7 @@ const AllTickets = ({ tickets, setInProgressCount, setResolvedTaskCount }) => {
 				</div>
 				<div>
 					<div>
-						<h2 className='mt-[-35px] text-gray-800 text-sm font-bold mb-2'>
+						<h2 className='mt-2 md:mt-[-35px] text-gray-800 text-sm font-bold mb-2'>
 							Task Status
 						</h2>
 						<div className="text-gray-800 bg-white rounded-md p-2">

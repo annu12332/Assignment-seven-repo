@@ -2,11 +2,11 @@ import React from 'react'
 
 const Navbar = () => {
 	return (
-		<nav className=' w-full flex items-center justify-between px-8 py-3 bg-white shadow'>
-			<div className='text-xl font-bold text-gray-800'>CS-Ticket System</div>
+		<nav className=' w-full items-center justify-between px-8 py-3 bg-white shadow text-center md:flex '>
+			<div className='text-xl font-bold text-gray-800 max-sm:text-sm'>CS-Ticket System</div>
 
-			<div className='flex gap-2'>
-				<div className='flex items-center space-x-6'>
+			<div className='md:flex gap-2 '>
+				<div className='text-xs mb-1 md:flex items-center space-x-6'>
 				<a href='#home' className='text-gray-700 hover:text-gray-900'>
 					Home
 				</a>
